@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <h5>Поиск по имени и фамилии:</h5>
+  <div class="row mb-4">
+    <div class="col-6">
+      <input type="search" class="form-control" placeholder="Имя и фамилия" [(ngModel)]="searchStr" />
+    </div>
+  </div>
+  <h5>Сортировка id</h5>
+  <div class="row-3 mb-4">
+    <button class="btn btn-outline-secondary mr-2" (click)="onSortUp()"> По возрастанию</button>
+    <button class="btn btn-outline-secondary" (click)="onSortDown()"> По убыванию</button>
+  </div>
+ <h5>Сортировка возраста</h5>
+ <div class="row-3 mb-4">
+  <button class="btn btn-outline-secondary mr-2 " (click)="onSortUpAges()"> По возрастанию</button>
+  <button class="btn btn-outline-secondary" (click)="onSortDownAges()"> По убыванию</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Отчество</th>
+        <th scope="col">Телефон</th>
+        <th scope="col">Почта</th>
+        <th scope="col">Возраст</th>
+        <th scope="col">Отдел</th>
+        <th class="text-right" scope="col">
+          <button class="btn btn-outline-secondary mr-1" (click)='onAddProfile()'>
+            Добавить пользователя
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let worker of workers | findWorker: searchStr">
+        <td scope="row">{{ worker.id }}</td>
+        <td>{{ worker.name }}</td>
+        <td>{{ worker.surname }}</td>
+        <td>{{ worker.patronymic }}</td>
+        <td>{{ worker.phone }}</td>
+        <td>{{ worker.email }}</td>
+        <td>{{ worker.ages }}</td>
+        <td *ngIf="worker.department==0">IT</td>
+        <td *ngIf="worker.department==1">Продаж</td>
+        <td *ngIf="worker.department==2">Доставки</td>
+        <td *ngIf="worker.department==3">Юридический</td>
+        <td class="text-right">
+          <button class="btn btn-outline-info m-1" (click)='onLinkProfile(worker.id)'>
+            Редактировать
+          </button>
+          <button class="btn btn-outline-info mr-1" (click)='onDeleteById(worker.id)'>
+            Удалить
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

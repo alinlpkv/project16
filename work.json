@@ -1,0 +1,59 @@
+{
+  "mworkers": [
+    {
+      "name": "Иван",
+      "surname": "Иванов",
+      "patronymic": "Иванович",
+      "phone": "+7(111) 111-1111",
+      "email": "somebody@mail.com",
+      "dateOfBirth": "2000-06-10",
+      "ages": "20",
+      "department": 0,
+      "id": 7
+    },
+    {
+      "name": "Михаил",
+      "surname": "Михайлов",
+      "patronymic": "Михайлович",
+      "phone": "+7(222) 222-2222",
+      "email": "somebody@mail.com",
+      "dateOfBirth": "2000-06-11",
+      "ages": "19",
+      "department": 1,
+      "id": 2
+    },
+    {
+      "name": "Катя",
+      "surname": "Попова",
+      "patronymic": "Петровна",
+      "phone": "+7(333) 333-3333",
+      "email": "somebody@mail.com",
+      "dateOfBirth": "1990-04-22",
+      "ages": "30",
+      "department": 2,
+      "id": 3
+    },
+    {
+      "name": "Петр",
+      "surname": "Петров",
+      "patronymic": "Перович",
+      "phone": "+7(555) 555-5555",
+      "email": "somebody@mail.com",
+      "dateOfBirth": "2001-06-11",
+      "ages": "18",
+      "department": 3,
+      "id": 4
+    },
+    {
+      "name": "Иван",
+      "surname": "Петров",
+      "patronymic": "Андреевич",
+      "phone": "+7(888) 888-8888",
+      "email": "somebody@mail.com",
+      "dateOfBirth": "1978-11-23",
+      "ages": "41",
+      "department": 3,
+      "id": 5
+    }
+  ]
+}

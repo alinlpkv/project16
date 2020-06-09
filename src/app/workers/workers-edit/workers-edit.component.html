@@ -1,0 +1,77 @@
+  
+<div class="container-fluid">
+    <form [formGroup]="workerForm">
+      <div class="col-6">
+      <div class="form-group">
+        <label for="username">Имя</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          placeholder="Имя"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="usersurname">Фамилия</label>
+        <input
+          type="text"
+          class="form-control"
+          id="usersurname"
+          placeholder="Фамилия"
+          formControlName="surname"
+        />
+      </div>
+      <div class="form-group">
+        <label for="username">Отчество</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Отчество"
+          formControlName="patronymic"
+        />
+      </div>
+      <div class="form-group">
+        <label for="usersurname">Телефон</label>
+        <input
+        [textMask]="{mask: maskPhone}"
+          type="text"
+          class="form-control"
+          placeholder="Телефон"
+          formControlName="phone"
+        />
+      </div>
+      <div class="form-group">
+        <label for="username">Почта</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Почта"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="usersurname">Дата рождения</label>
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Дата рождения"
+          formControlName="dateOfBirth"
+        />
+      </div>
+      <div class="form-group">
+        <label for="usersurname">Отдел</label>
+        <select class="custom-select" formControlName="department">
+          <option [ngValue]="myWorkerDepartament.it">IT</option>
+         <option [ngValue]="myWorkerDepartament.sale">Продаж</option>
+         <option [ngValue]="myWorkerDepartament.delivery">Доставки</option>
+         <option [ngValue]="myWorkerDepartament.lawyer">Юридический</option>
+       </select>
+      </div>
+      <button class="btn btn-outline-success mr-4" [disabled]="workerForm.invalid" (click)="onSave()">
+        Сохранить
+      </button>
+      <button class="btn btn-outline-danger" *ngIf ="id != null" (click)="onDelete()">Удалить</button>
+      </div>
+    </form>
+  </div>
